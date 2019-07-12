@@ -16,7 +16,7 @@ const formLogin = (function() {
       content: "Esqueceu a senha?"
     });
 
-    const $botaoLogin = buttonCollabcode.render("Entrar");
+    const $botaoLogin = buttonCollabcode.render({ content: "Entrar" });
 
     const $criarConta = textCollabcode.render({
       content: "Criar conta grátis"
