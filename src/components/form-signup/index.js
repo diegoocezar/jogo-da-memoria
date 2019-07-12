@@ -2,18 +2,22 @@ const formSignup = (function() {
   const module = {};
 
   module.children = () => {
+    const $nomeSignup = inputCollabcode.render({
+      placeholder: "Seu nome"
+    });
     const $emailSignup = inputCollabcode.render({
       type: "email",
-      placeholder: "diego.cezar@exemplo.com"
+      placeholder: "Seu email"
     });
 
     const $senhaSignup = inputCollabcode.render({
       type: "password",
-      placeholder: "Digite sua senha"
+      placeholder: "Informe uma senha"
     });
 
-    const $esqueceuSenha = textCollabcode.render({
-      content: "Esqueceu a senha?"
+    const $confirmaSenha = inputCollabcode.render({
+      type: "password",
+      placeholder: "Repita sua senha"
     });
 
     const $botaoSignup = buttonCollabcode.render({ content: "Cadastrar" });
@@ -22,17 +26,14 @@ const formSignup = (function() {
       content: "Voltar"
     });
 
-    const $criarConta = textCollabcode.render({
-      content: "Criar conta grátis"
-    });
-
     return `
+      ${$nomeSignup}
       ${$emailSignup}
       ${$senhaSignup}
-      ${$esqueceuSenha}
+      ${$confirmaSenha}
       ${$botaoSignup}
       ${$botaoVoltar}
-      ${$criarConta}
+      
     `;
   };
 
@@ -46,17 +47,8 @@ const formSignup = (function() {
         padding: 0 10px 10px;
       }
 
-      .form-signup > .input-collabcode:first-child {
-        margin-bottom: 43px;
-      }
-
-      .form-signup > .text-collabcode {
-        text-align: center;
-        margin-top: 11px;
-        margin-bottom: 11px;
-        margin-right: auto;
-        margin-left: auto;
-        width: 40%;
+      .form-signup > .input-collabcode {
+        margin-bottom: 9px;
       }
 
     `;
