@@ -34,6 +34,7 @@ const loginWrapper = (function() {
       width: 100vw;
       height: 100vh;
       max-width: 375px;
+      box-sizing: border-box;
       overflow-x: hidden;
       margin-left: auto;
       margin-right: auto;
