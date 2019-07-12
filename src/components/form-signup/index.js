@@ -11,13 +11,23 @@ const formSignup = (function() {
     });
 
     const $senhaSignup = inputCollabcode.render({
+      id: "password",
       type: "password",
       placeholder: "Informe uma senha"
     });
 
     const $confirmaSenha = inputCollabcode.render({
+      id: "confirmPassword",
       type: "password",
       placeholder: "Repita sua senha"
+    });
+
+    const $eyePassword = eyeCollabcode.render({
+      attrFor: "password"
+    });
+
+    const $eyeConfirmPassword = eyeCollabcode.render({
+      attrFor: "confirmPassword"
     });
 
     const $botaoSignup = buttonCollabcode.render({ content: "Cadastrar" });
@@ -30,7 +40,9 @@ const formSignup = (function() {
       ${$nomeSignup}
       ${$emailSignup}
       ${$senhaSignup}
+      ${$eyePassword}
       ${$confirmaSenha}
+      ${$eyeConfirmPassword}
       ${$botaoSignup}
       ${$botaoVoltar}
       
@@ -49,6 +61,11 @@ const formSignup = (function() {
 
       .form-signup > .input-collabcode {
         margin-bottom: 9px;
+      }
+
+      .form-signup > .eye-collabcode {
+      right: 25px;
+      transform: translateY(-190%);
       }
 
     `;

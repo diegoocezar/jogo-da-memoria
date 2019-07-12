@@ -8,8 +8,13 @@ const formLogin = (function() {
     });
 
     const $senhaLogin = inputCollabcode.render({
+      id: "password",
       type: "password",
       placeholder: "Digite sua senha"
+    });
+
+    const $eyePassword = eyeCollabcode.render({
+      attrFor: "password"
     });
 
     const $esqueceuSenha = textCollabcode.render({
@@ -25,6 +30,7 @@ const formLogin = (function() {
     return `
       ${$emailLogin}
       ${$senhaLogin}
+      ${$eyePassword}
       ${$esqueceuSenha}
       ${$botaoLogin}
       ${$criarConta}
@@ -52,6 +58,11 @@ const formLogin = (function() {
         margin-right: auto;
         margin-left: auto;
         width: 40%;
+      }
+
+      .form-login > .eye-collabcode {
+        right: 25px;
+        transform: translateY(-150%);
       }
 
     `;
