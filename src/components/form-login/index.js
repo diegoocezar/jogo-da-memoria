@@ -49,6 +49,9 @@ const formLogin = (function() {
         text-align: center;
         margin-top: 11px;
         margin-bottom: 11px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 40%;
       }
 
     `;
