@@ -23,18 +23,23 @@ const buttonCollabcode = (function() {
       .button-collabcode:hover {
         cursor: pointer;
       }
+
+      .button-collabcode.-back {
+        background-color: #3A4042;
+
+      }
     `;
 
     $head.insertBefore($style, null);
   };
-  module.render = content => {
+  module.render = ({ variacao = "", content }) => {
     module._id++;
     module._style();
 
     return `
-      <input class="button-collabcode button-${
-        module._id
-      }" type="submit" value="${content}">
+      <input class="button-collabcode ${variacao} button-${
+      module._id
+    }" type="submit" value="${content}">
     `;
   };
 
