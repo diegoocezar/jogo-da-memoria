@@ -19,6 +19,10 @@ const buttonCollabcode = (function() {
         font-size: .8rem;
         margin-top: 13px;
       }
+
+      .button-collabcode:hover {
+        cursor: pointer;
+      }
     `;
 
     $head.insertBefore($style, null);
