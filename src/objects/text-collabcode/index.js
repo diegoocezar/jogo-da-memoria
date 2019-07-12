@@ -13,9 +13,7 @@ const textCollabcode = (function() {
         font-size: .8rem;
         text-decoration: none;
         color: #000;
-        margin-right: auto;
-        margin-left: auto;
-        width: 40%;
+        
       }
 
       .text-collabcode:hover {
