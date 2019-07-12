@@ -25,13 +25,13 @@ const textCollabcode = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = ({ href = "#", content }) => {
+  module.render = ({ href = "login", content }) => {
     module._id++;
     module._style();
     return `
       <a class="text-collabcode text-${
         module._id
-      }" href="${href}">${content}</a>
+      }" href="#/${href}">${content}</a>
     `;
   };
 

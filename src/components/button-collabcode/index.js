@@ -32,18 +32,28 @@ const buttonCollabcode = (function() {
 
     $head.insertBefore($style, null);
   };
-  module.render = ({ variacao = "", content }) => {
+
+  module.handleClick = (event, path) => {
+    event.preventDefault();
+    window.location.hash = `#/${path}`;
+    window.location.reload();
+  };
+
+  module.render = ({ variacao = "", content = "", path = "login" }) => {
     module._id++;
     module._style();
 
     return `
-      <input class="button-collabcode ${variacao} button-${
-      module._id
-    }" type="submit" value="${content}">
+      <input 
+        class="button-collabcode ${variacao} button-${module._id}" 
+        type="submit" 
+        value="${content}"
+        onclick="buttonCollabcode.handleClick(event, '${path}')">
     `;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();

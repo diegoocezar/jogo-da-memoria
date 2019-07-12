@@ -1,42 +1,6 @@
 const formLogin = (function() {
   const module = {};
 
-  module.children = () => {
-    const $emailLogin = inputCollabcode.render({
-      type: "email",
-      placeholder: "diego.cezar@exemplo.com"
-    });
-
-    const $senhaLogin = inputCollabcode.render({
-      id: "password",
-      type: "password",
-      placeholder: "Digite sua senha"
-    });
-
-    const $eyePassword = eyeCollabcode.render({
-      attrFor: "password"
-    });
-
-    const $esqueceuSenha = textCollabcode.render({
-      content: "Esqueceu a senha?"
-    });
-
-    const $botaoLogin = buttonCollabcode.render({ content: "Entrar" });
-
-    const $criarConta = textCollabcode.render({
-      content: "Criar conta grátis"
-    });
-
-    return `
-      ${$emailLogin}
-      ${$senhaLogin}
-      ${$eyePassword}
-      ${$esqueceuSenha}
-      ${$botaoLogin}
-      ${$criarConta}
-    `;
-  };
-
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
@@ -47,7 +11,7 @@ const formLogin = (function() {
         padding: 0 10px 10px;
       }
 
-      .form-login > .input-collabcode:first-child {
+      .form-login > .input-collabcode[type="email"]{
         margin-bottom: 43px;
       }
 
@@ -64,11 +28,62 @@ const formLogin = (function() {
         right: 25px;
         transform: translateY(-150%);
       }
-
+      
+      .form-login > .icon-collabcode {
+        left: 20px;
+        transform: translateY(50%);
+      }
     `;
 
     $head.insertBefore($style, null);
   };
+
+  module.children = () => {
+    const $emailLogin = inputCollabcode.render({
+      type: "email",
+      placeholder: "diego.cezar@exemplo.com"
+    });
+
+    const $iconEmail = iconCollabcode.render({ icon: "email" });
+
+    const $senhaLogin = inputCollabcode.render({
+      id: "password",
+      type: "password",
+      placeholder: "Digite sua senha"
+    });
+
+    const $iconLock = iconCollabcode.render({ icon: "lock" });
+
+    const $eyePassword = eyeCollabcode.render({
+      attrFor: "password"
+    });
+
+    const $esqueceuSenha = textCollabcode.render({
+      content: "Esqueceu a senha?"
+    });
+
+    const $botaoLogin = buttonCollabcode.render({
+      content: "Entrar",
+      hash: "game"
+    });
+
+    const $criarConta = textCollabcode.render({
+      href: "signup",
+      content: "Criar conta grátis"
+    });
+
+    return `
+      ${$iconEmail}
+      ${$emailLogin}
+      ${$iconLock}
+      ${$senhaLogin}
+      ${$eyePassword}
+      ${$esqueceuSenha}
+      ${$botaoLogin}
+      ${$criarConta}
+    `;
+  };
+
   module.render = () => {
     module._style();
 
