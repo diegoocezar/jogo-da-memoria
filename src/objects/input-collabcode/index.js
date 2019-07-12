@@ -8,7 +8,7 @@ const inputCollabcode = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .input-collabcode-${module._id}{
+      .input-collabcode.input-${module._id}{
         width: 100%;
         height: 40px;
         font-size: .8rem;
@@ -16,10 +16,8 @@ const inputCollabcode = (function() {
         border: 1px #000 solid;
         color: #000;
         text-align: center;
-      }
-
-      .input-collabcode-${module._id}+a{
-        margin-top: 43px;
+        background-color: #E5E5E5;
+        box-sizing: border-box;
       }
     `;
 
@@ -29,7 +27,7 @@ const inputCollabcode = (function() {
     module._id++;
     module._style();
     return `
-      <input class="input-collabcode-${
+      <input class="input-collabcode input-${
         module._id
       }" type="${type}" placeholder="${placeholder}">
     `;
