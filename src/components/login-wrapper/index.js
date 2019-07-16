@@ -1,29 +1,6 @@
 const loginWrapper = (function() {
   const module = {};
 
-  module._children = () => {
-    const $coloredBox = coloredBox.render({
-      color: "-black",
-      variante: "-first"
-    });
-    const $secondColoredBox = coloredBox.render({
-      color: "-red",
-      variante: "-second"
-    });
-
-    const $headerCollabcode = headerCollabcode.render();
-    const $titleCollabcode = titleCollabcode.render("Bem Vindo");
-    const $formLogin = formLogin.render();
-
-    return `
-      ${$headerCollabcode}
-      ${$coloredBox}
-      ${$secondColoredBox}
-      ${$titleCollabcode}
-      ${$formLogin}
-    `;
-  };
-
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
@@ -68,6 +45,29 @@ const loginWrapper = (function() {
     `;
 
     $head.insertBefore($style, null);
+  };
+
+  module._children = () => {
+    const $coloredBox = coloredBox.render({
+      color: "-black",
+      variante: "-first"
+    });
+    const $secondColoredBox = coloredBox.render({
+      color: "-red",
+      variante: "-second"
+    });
+
+    const $headerCollabcode = headerCollabcode.render();
+    const $titleCollabcode = titleCollabcode.render("Bem Vindo");
+    const $formLogin = formLogin.render();
+
+    return `
+      ${$headerCollabcode}
+      ${$coloredBox}
+      ${$secondColoredBox}
+      ${$titleCollabcode}
+      ${$formLogin}
+    `;
   };
 
   module.render = () => {
