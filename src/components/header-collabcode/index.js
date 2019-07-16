@@ -1,7 +1,7 @@
 const headerCollabcode = (function() {
   const module = {};
 
-  module.children = () => {
+  module._children = () => {
     const $headerText = headerText.render();
     const $headerGueio = headerGueio.render();
 
@@ -37,7 +37,7 @@ const headerCollabcode = (function() {
     module._style();
     return `
       <header class="header-collabcode">
-        ${module.children()}
+        ${module._children()}
       </header>
     `;
   };

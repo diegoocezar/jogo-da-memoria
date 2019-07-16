@@ -17,7 +17,6 @@ const buttonCollabcode = (function() {
         color: #f2f2f2;
         font-weight: bold;
         font-size: .8rem;
-        margin-top: 13px;
       }
 
       .button-collabcode:hover {

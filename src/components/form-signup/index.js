@@ -1,7 +1,7 @@
 const formSignup = (function() {
   const module = {};
 
-  module.children = () => {
+  module._children = () => {
     const $nomeSignup = inputCollabcode.render({
       placeholder: "Seu nome"
     });
@@ -76,7 +76,16 @@ const formSignup = (function() {
 
       .form-signup > .input-collabcode {
         margin-bottom: 9px;
+
       }
+
+      .form-signup > .button-collabcode {
+
+        margin-top: 13px;
+
+      }
+
+
 
       .form-signup > .eye-collabcode {
       right: 25px;
@@ -96,7 +105,7 @@ const formSignup = (function() {
     module._style();
 
     return `
-      <form class="form-signup" action="" method="POST">${module.children()}</form>
+      <form class="form-signup" action="" method="POST">${module._children()}</form>
     `;
   };
 

@@ -1,7 +1,7 @@
 const loginWrapper = (function() {
   const module = {};
 
-  module.children = () => {
+  module._children = () => {
     const $coloredBox = coloredBox.render({
       color: "-black",
       variante: "-first"
@@ -72,7 +72,7 @@ const loginWrapper = (function() {
 
   module.render = () => {
     module._style();
-    return `<section class="login-wrapper">${module.children()}</section>`;
+    return `<section class="login-wrapper">${module._children()}</section>`;
   };
 
   return {

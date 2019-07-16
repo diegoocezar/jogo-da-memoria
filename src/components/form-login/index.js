@@ -9,10 +9,11 @@ const formLogin = (function() {
       .form-login {
         margin-top: 40px;
         padding: 0 10px 10px;
+        height: 302px;
       }
 
       .form-login > .input-collabcode[type="email"]{
-        margin-bottom: 43px;
+        margin-bottom: 30px;
       }
 
       .form-login > .text-collabcode {
@@ -33,12 +34,19 @@ const formLogin = (function() {
         left: 20px;
         transform: translateY(50%);
       }
+      .form-login > .button-collabcode {
+
+        margin-top: 14%;
+
+      }
+
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.children = () => {
+  module._children = () => {
+    const $emailLabel = labelCollabcode.render({ content: "Email" });
     const $emailLogin = inputCollabcode.render({
       type: "email",
       placeholder: "diego.cezar@exemplo.com"
@@ -46,6 +54,7 @@ const formLogin = (function() {
 
     const $iconEmail = iconCollabcode.render({ icon: "email" });
 
+    const $senhaLabel = labelCollabcode.render({ content: "Senha" });
     const $senhaLogin = inputCollabcode.render({
       id: "password",
       type: "password",
@@ -73,8 +82,10 @@ const formLogin = (function() {
     });
 
     return `
+    ${$emailLabel}
       ${$iconEmail}
       ${$emailLogin}
+      ${$senhaLabel}
       ${$iconLock}
       ${$senhaLogin}
       ${$eyePassword}
@@ -88,7 +99,7 @@ const formLogin = (function() {
     module._style();
 
     return `
-      <form class="form-login" action="" method="GET">${module.children()}</form>
+      <form class="form-login" action="" method="GET">${module._children()}</form>
     `;
   };
 

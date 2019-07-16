@@ -1,7 +1,7 @@
 const signupWrapper = (function() {
   const module = {};
 
-  module.children = () => {
+  module._children = () => {
     const $coloredBox = coloredBox.render({
       color: "-red",
       variante: "-first"
@@ -72,7 +72,7 @@ const signupWrapper = (function() {
 
   module.render = () => {
     module._style();
-    return `<section class="signup-wrapper">${module.children()}</section>`;
+    return `<section class="signup-wrapper">${module._children()}</section>`;
   };
 
   return {
