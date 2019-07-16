@@ -5,6 +5,7 @@
   path[""] = login;
   path["#/login"] = login;
   path["#/signup"] = signup;
+  path["#/404"] = erro404;
 
   // Descomentar quando tiver a página de erro criada
   path[hash] ? path[hash]() : path["#/404"]();
