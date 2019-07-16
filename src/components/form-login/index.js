@@ -73,7 +73,7 @@ const formLogin = (function() {
 
     const $botaoLogin = buttonCollabcode.render({
       content: "Entrar",
-      hash: "game"
+      path: "game"
     });
 
     const $criarConta = textCollabcode.render({
