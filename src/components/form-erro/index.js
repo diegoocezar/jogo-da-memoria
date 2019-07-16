@@ -22,7 +22,10 @@ const formErro = (function() {
         margin-top: 45%
       }
 
-
+      .form-erro > .label-collabcode {
+        display: block;
+        
+      }
 
     `;
 

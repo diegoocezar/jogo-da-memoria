@@ -40,6 +40,12 @@ const formLogin = (function() {
 
       }
 
+      .form-login > .label-collabcode {
+        display: block;
+        margin-bottom: 5px;
+        margin-left: 5px;
+      }
+
     `;
 
     $head.insertBefore($style, null);
@@ -73,7 +79,7 @@ const formLogin = (function() {
 
     const $botaoLogin = buttonCollabcode.render({
       content: "Entrar",
-      path: "game"
+      path: "nivel"
     });
 
     const $criarConta = textCollabcode.render({
