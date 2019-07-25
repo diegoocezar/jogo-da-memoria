@@ -32,7 +32,7 @@ const formLogin = (function() {
       
       .form-login > .icon-collabcode {
         left: 20px;
-        transform: translateY(50%);
+        transform: translateY(35%);
       }
       .form-login > .button-collabcode {
 
