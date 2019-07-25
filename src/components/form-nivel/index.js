@@ -24,7 +24,7 @@ const formNivel = (function() {
         display: block;
       }
 
-      .form-nivel > .button-collabcode:nth-child(odd) {
+      .form-nivel > .button-nivel{
         margin: 20px 0 10px;
         
       }
@@ -40,7 +40,7 @@ const formNivel = (function() {
 
     const $radioFacil = radioCollabcode.render({
       dificuldade: "1",
-      checked: "checked"
+      isCheck: "checked"
     });
     const $labelFacil = labelCollabcode.render({
       content: "Fácil",
@@ -85,7 +85,7 @@ const formNivel = (function() {
       label: $labelMuitoDificil
     });
 
-    const $botaoJogar = buttonCollabcode.render({
+    const $botaoJogar = buttonNivel.render({
       path: "game",
       content: "Jogar"
     });
@@ -118,7 +118,9 @@ const formNivel = (function() {
     module._style();
 
     return `
-      <form class="form-nivel" action="" method="POST">${module._children()}</form>
+      <form class="form-nivel" 
+      action="" 
+      method="POST">${module._children()}</form>
     `;
   };
 
