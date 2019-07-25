@@ -20,7 +20,7 @@ const radioCollabcode = (function() {
     store.dificuldade = component.value;
   };
 
-  module.render = ({ dificuldade }) => {
+  module.render = ({ dificuldade, checked = "" }) => {
     module._id++;
     // console.log(dificuldade);
     return `
@@ -29,7 +29,7 @@ const radioCollabcode = (function() {
       type="radio" name="dificuldade" 
       id="${dificuldade}"
       onclick="radioCollabcode.handleClick(this)"
-      value="${dificuldade}">
+      value="${dificuldade}" ${checked}>
     `;
   };
 
