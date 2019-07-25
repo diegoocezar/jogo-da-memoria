@@ -20,16 +20,17 @@ const radioCollabcode = (function() {
     store.dificuldade = component.value;
   };
 
-  module.render = ({ dificuldade, checked = "" }) => {
+  module.render = ({ dificuldade, isCheck = "" }) => {
     module._id++;
     // console.log(dificuldade);
     return `
       <input 
       class="radio-collabcode radio-${module._id}" 
+      ${isCheck}
       type="radio" name="dificuldade" 
       id="${dificuldade}"
       onclick="radioCollabcode.handleClick(this)"
-      value="${dificuldade}" ${checked}>
+      value="${dificuldade}" > 
     `;
   };
 
