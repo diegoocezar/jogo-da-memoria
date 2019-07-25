@@ -15,7 +15,7 @@ const iconCollabcode = (function() {
       position: absolute;
       text-indent: -9999px;
       width: 30px;
-      height: 20px;
+      height: 24px;
       
     }
     `;
