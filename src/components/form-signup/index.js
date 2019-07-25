@@ -94,7 +94,7 @@ const formSignup = (function() {
 
       .form-signup > .icon-collabcode {
         left: 20px;
-        transform: translateY(50%);
+        transform: translateY(35%);
       }
 
     `;

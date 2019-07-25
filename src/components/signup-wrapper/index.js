@@ -32,7 +32,7 @@ const signupWrapper = (function() {
 
     .signup-wrapper {
       width: 100vw;
-      height: 100vh;
+      height: 100%;
       max-width: 375px;
       box-sizing: border-box;
       overflow-x: hidden;
