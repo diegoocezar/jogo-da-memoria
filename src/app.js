@@ -7,6 +7,7 @@
   path["#/signup"] = signup;
   path["#/404"] = erro404;
   path["#/nivel"] = nivel;
+  path["#/game"] = game;
 
   // Descomentar quando tiver a página de erro criada
   path[hash] ? path[hash]() : path["#/404"]();
