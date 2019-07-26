@@ -7,8 +7,8 @@ const formNivel = (function() {
 
     $style.textContent = `
       .form-nivel {
-        margin-top: 40px;
-        padding: 0 10px 10px;
+        margin-top: 7%;
+        padding: 0 10px;
       }
 
       .form-nivel > .label-collabcode {
@@ -20,12 +20,12 @@ const formNivel = (function() {
       }
 
       .form-nivel > .label-collabcode:first-child {
-        margin-bottom: 25px;
+        margin-bottom: 3%;
         display: block;
       }
 
       .form-nivel > .button-nivel{
-        margin: 20px 0 10px;
+        margin: 5% 0 10px;
         
       }
     `;

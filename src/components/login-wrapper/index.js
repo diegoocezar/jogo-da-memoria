@@ -9,38 +9,28 @@ const loginWrapper = (function() {
 
     .login-wrapper {
       width: 100vw;
-      height: 100%;
+      height: 100vh;
+      max-height: 620px;
       max-width: 375px;
       box-sizing: border-box;
       overflow-x: hidden;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       position: relative;
       background-color: #e5e5e5;
       border: 1px #3A4042 solid;
       z-index: 0;
     }
 
-    .login-wrapper > .colored-box.-black {
-      background-color: #3A4042;
+
+    @media (min-height: 690px){
+
+
       
-    }
+      .login-wrapper > .colored-box.-first, .login-wrapper > .colored-box.-second{
+        height: 305px;
+      }
+      
 
-    .login-wrapper > .colored-box.-red {
-      background-color: #F25A70;
-    }
-
-    .login-wrapper > .colored-box.-first {
-      top: -130px;
-      left: -125px;
-      transform: rotate(-34deg);
-    }
-
-    .login-wrapper > .colored-box.-second {
-      z-index: -2;
-      left: -71px;
-      top: -114px;
-      transform: rotate(-40deg);
     }
     `;
 

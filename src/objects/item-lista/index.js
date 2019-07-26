@@ -10,7 +10,7 @@ const itemLista = (function() {
     .item-lista.item-${module._id + 1} {
       display: flex;
       height: 20px;
-      padding: 10px 0;
+      padding: 2% 0;
       
     }
     .item-lista.item-${module._id + 1} .radio-collabcode {

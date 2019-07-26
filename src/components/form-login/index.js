@@ -7,19 +7,19 @@ const formLogin = (function() {
 
     $style.textContent = `
       .form-login {
-        margin-top: 40px;
-        padding: 0 10px 10px;
-        height: 302px;
+        margin-top: 7%;
+        padding: 0 10px;
+        
       }
 
       .form-login > .input-collabcode[type="email"]{
-        margin-bottom: 30px;
+        margin-bottom: 7%;
       }
 
       .form-login > .text-collabcode {
         text-align: center;
         margin-top: 11px;
-        margin-bottom: 11px;
+        
         margin-right: auto;
         margin-left: auto;
         width: 40%;
@@ -27,16 +27,16 @@ const formLogin = (function() {
 
       .form-login > .eye-collabcode {
         right: 25px;
-        transform: translateY(-150%);
+        transform: translateY(-140%);
       }
       
       .form-login > .icon-collabcode {
         left: 20px;
-        transform: translateY(35%);
+        transform: translateY(25%);
       }
       .form-login > .button-collabcode {
 
-        margin-top: 14%;
+        margin-top: 12%;
 
       }
 

@@ -8,18 +8,17 @@ const formErro = (function() {
     $style.textContent = `
      
       .form-erro {
-        margin-top: 40px;
-        padding: 0 10px 10px;
-        height: 302px;
+        margin-top: 7%;
+        padding: 0 10px;
       }
 
       .label-collabcode {
         text-align: center;
-        padding-top: 22%;
+        padding-top: 15%;
       }
 
       .button-collabcode {
-        margin-top: 45%
+        margin-top: 40%
       }
 
       .form-erro > .label-collabcode {

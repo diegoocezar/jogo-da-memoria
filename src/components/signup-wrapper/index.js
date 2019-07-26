@@ -32,7 +32,8 @@ const signupWrapper = (function() {
 
     .signup-wrapper {
       width: 100vw;
-      height: 100%;
+      height: 100vh;
+      max-height: 620px;
       max-width: 375px;
       box-sizing: border-box;
       overflow-x: hidden;
@@ -44,27 +45,6 @@ const signupWrapper = (function() {
       z-index: 0;
     }
 
-    .signup-wrapper > .colored-box.-black {
-      background-color: #3A4042;
-      
-    }
-
-    .signup-wrapper > .colored-box.-red {
-      background-color: #F25A70;
-    }
-
-    .signup-wrapper > .colored-box.-first {
-      top: -130px;
-      left: -125px;
-      transform: rotate(-34deg);
-    }
-
-    .signup-wrapper > .colored-box.-second {
-      z-index: -2;
-      left: -71px;
-      top: -114px;
-      transform: rotate(-40deg);
-    }
     `;
 
     $head.insertBefore($style, null);

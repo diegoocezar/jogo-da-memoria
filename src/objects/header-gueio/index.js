@@ -7,8 +7,8 @@ const headerGueio = (function() {
 
     $style.textContent = `
       .header-gueio {
-        width: 86px;
-        height: 89px;
+        width: 80px;
+        height: 83px;
       }
     `;
 

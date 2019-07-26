@@ -10,7 +10,7 @@ const titleCollabcode = (function() {
         font-size: 1.4rem;
         text-transform: uppercase;
         color: #F25A70;
-        margin-top: 190px;
+        margin-top: 48%;
         text-align: center;        
       }
     `;

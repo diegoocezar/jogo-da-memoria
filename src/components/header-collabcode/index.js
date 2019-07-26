@@ -26,7 +26,7 @@ const headerCollabcode = (function() {
       .header-collabcode > .header-gueio {
         position: absolute;
         top: 23px;
-        left: 142px;
+        left: 125px;
       }
     `;
 

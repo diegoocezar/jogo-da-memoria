@@ -70,8 +70,8 @@ const formSignup = (function() {
 
     $style.textContent = `
       .form-signup {
-        margin-top: 40px;
-        padding: 0 10px 10px;
+        margin-top: 7%;
+        padding: 0 10px;
       }
 
       .form-signup > .input-collabcode {
@@ -81,7 +81,7 @@ const formSignup = (function() {
 
       .form-signup > .button-collabcode {
 
-        margin-top: 13px;
+        margin-top: 2%;
 
       }
 
@@ -89,12 +89,12 @@ const formSignup = (function() {
 
       .form-signup > .eye-collabcode {
       right: 25px;
-      transform: translateY(-190%);
+      transform: translateY(-180%);
       }
 
       .form-signup > .icon-collabcode {
         left: 20px;
-        transform: translateY(35%);
+        transform: translateY(25%);
       }
 
     `;

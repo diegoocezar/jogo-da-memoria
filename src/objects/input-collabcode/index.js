@@ -10,7 +10,7 @@ const inputCollabcode = (function() {
     $style.textContent = `
       .input-collabcode.input-${module._id}{
         width: 100%;
-        height: 40px;
+        height: 2.2rem;
         font-size: .8rem;
         border-radius: 20px;
         border: 1px #000 solid;

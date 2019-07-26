@@ -8,9 +8,9 @@ const headerText = (function() {
     $style.textContent = `
       .header-text {
         font-family: Barlow, sans-serif;
-        font-size: 30px;
-        font-weight: medium;
-        line-height: 36px;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 26px;
         text-transform: uppercase;
         color: #F2F2F2;
       }
