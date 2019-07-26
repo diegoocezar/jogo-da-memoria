@@ -1,5 +1,7 @@
 const game = function() {
   const $root = document.querySelector("#root");
 
-  $root.insertAdjacentHTML("beforeend", "");
+  const $cardsWrapper = cardsWrapper.render();
+
+  $root.insertAdjacentHTML("beforeend", $cardsWrapper);
 };
