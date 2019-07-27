@@ -7,18 +7,15 @@ const memoryCard = (function() {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     const nivel = localStorage.getItem("dificuldade");
-    // width: 125px;
-    // height: 115px;
+
     $style.textContent = `
       .memory-card.memory-card-${module._id} {
         width: ${nivel == 1 ? "125px" : "80px"} ;
         height: ${nivel == 1 ? "115px" : "85px"} ;
         position: relative;
-        
         border-radius: 20px;
-    
-        
       }
+      
       .memory-card .card-${module._id} {
         width: ${nivel == 1 ? "125px" : "80px"};
         height: ${nivel == 1 ? "115px" : "85px"};
