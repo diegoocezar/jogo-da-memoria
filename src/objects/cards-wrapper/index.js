@@ -65,18 +65,57 @@ const cardsWrapper = (function() {
       nameClass: "-turned"
     });
 
+    const $memorycardBug = memoryCard.render({
+      src: "img/icons/icon-bug.png",
+      alt: "Ícone de Bug",
+      nameClass: "-turned"
+    });
+
+    const $memorycardCabeca = memoryCard.render({
+      src: "img/icons/icon-cabeca.png",
+      alt: "Ícone de Cabeça",
+      nameClass: "-turned"
+    });
+
+    const $memorycardCelular = memoryCard.render({
+      src: "img/icons/icon-celular.png",
+      alt: "Ícone de Celular",
+      nameClass: "-turned"
+    });
+
+    const $memorycardPhp = memoryCard.render({
+      src: "img/icons/icon-php.png",
+      alt: "Ícone de PHP",
+      nameClass: "-turned"
+    });
+
+    const $memorycardResponsivo = memoryCard.render({
+      src: "img/icons/icon-responsivo.png",
+      alt: "Ícone de Responsivo",
+      nameClass: "-turned"
+    });
+
+    const $memorycardWoman = memoryCard.render({
+      src: "img/icons/icon-woman.png",
+      alt: "Ícone de Desenvolvedora",
+      nameClass: "-turned"
+    });
+
     for (var i = 0; i < 2; i++) {
       $memoryCard.push($memoryCardC);
       $memoryCard.push($memorycardSettings);
       $memoryCard.push($memoryCardJS);
-      $memoryCard.push($memoryCardJava);
-      $memoryCard.push($memoryCardJava);
-      $memoryCard.push($memoryCardC);
-      $memoryCard.push($memorycardSettings);
-      $memoryCard.push($memoryCardJS);
-      $memoryCard.push($memoryCardJava);
+      $memoryCard.push($memorycardBug);
+      $memoryCard.push($memorycardCabeca);
+      $memoryCard.push($memorycardCelular);
+      $memoryCard.push($memorycardPhp);
+      $memoryCard.push($memorycardResponsivo);
+      $memoryCard.push($memorycardWoman);
       $memoryCard.push($memoryCardJava);
     }
+
+    // console.log($memoryCard);
+    shuffleCards.shuffle($memoryCard);
 
     return `
       ${$scoreBar}
