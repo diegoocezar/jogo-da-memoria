@@ -8,7 +8,7 @@ const listaCollabcode = (function() {
     $style.textContent = `
     
     .lista-collabcode {
-      
+      margin-top: 12%;
     }
 
     `;

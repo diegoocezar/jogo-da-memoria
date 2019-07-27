@@ -74,17 +74,6 @@ const formNivel = (function() {
       label: $labelDificil
     });
 
-    const $radioMuitoDificil = radioCollabcode.render({ dificuldade: "4" });
-    const $labelMuitoDificil = labelCollabcode.render({
-      content: "Muito Difícil",
-      AttrFor: "4"
-    });
-
-    const $itemListaMuitoDificil = itemLista.render({
-      radio: $radioMuitoDificil,
-      label: $labelMuitoDificil
-    });
-
     const $botaoJogar = buttonNivel.render({
       path: "game",
       content: "Jogar"
@@ -97,12 +86,7 @@ const formNivel = (function() {
     });
 
     const $listaCollabcode = listaCollabcode.render({
-      itens: [
-        $itemListaFacil,
-        $itemListaIntermediario,
-        $itemListaDificil,
-        $itemListaMuitoDificil
-      ]
+      itens: [$itemListaFacil, $itemListaIntermediario, $itemListaDificil]
     });
 
     return `

@@ -6,12 +6,13 @@ const memoryCard = (function() {
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
+    const nivel = localStorage.getItem("dificuldade");
     // width: 125px;
     // height: 115px;
     $style.textContent = `
       .memory-card.memory-card-${module._id} {
-        width: 80px;
-        height: 85px;
+        width: ${nivel == 1 ? "125px" : "80px"} ;
+        height: ${nivel == 1 ? "115px" : "85px"} ;
         position: relative;
         
         border-radius: 20px;
@@ -19,8 +20,8 @@ const memoryCard = (function() {
         
       }
       .memory-card .card-${module._id} {
-        width: 80px;
-        height: 85px;
+        width: ${nivel == 1 ? "125px" : "80px"};
+        height: ${nivel == 1 ? "115px" : "85px"};
         background-color: #f25a70;
         border-radius: 20px;
         display: flex;
@@ -47,15 +48,15 @@ const memoryCard = (function() {
     
       .card-${module._id}.-turned::before {
         content: "";
-        width: 60px;
-        height: 60px;
+        width: ${nivel == 1 ? "90px" : "60px"};
+        height: ${nivel == 1 ? "90px" : "60px"};
         position: absolute;
         background-color: #d4d4d4;
         border-radius: 50%;
       }
       
       .card-${module._id} > .icon {
-        width: 57px;
+        width: ${nivel == 1 ? "80px" : "57px"};;
         position: absolute;
       }
       .card-${module._id}.-turned > .icon {

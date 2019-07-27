@@ -15,7 +15,6 @@ const shuffleCards = (function() {
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
-      console.log(temporaryValue);
     }
 
     return array;

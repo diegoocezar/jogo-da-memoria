@@ -101,20 +101,41 @@ const cardsWrapper = (function() {
       nameClass: "-turned"
     });
 
-    for (var i = 0; i < 2; i++) {
-      $memoryCard.push($memoryCardC);
-      $memoryCard.push($memorycardSettings);
-      $memoryCard.push($memoryCardJS);
-      $memoryCard.push($memorycardBug);
-      $memoryCard.push($memorycardCabeca);
-      $memoryCard.push($memorycardCelular);
-      $memoryCard.push($memorycardPhp);
-      $memoryCard.push($memorycardResponsivo);
-      $memoryCard.push($memorycardWoman);
-      $memoryCard.push($memoryCardJava);
+    const nivel = localStorage.getItem("dificuldade");
+
+    if (nivel == 1) {
+      for (var i = 0; i < 2; i++) {
+        $memoryCard.push($memoryCardC);
+        $memoryCard.push($memorycardSettings);
+        $memoryCard.push($memoryCardJS);
+        $memoryCard.push($memorycardBug);
+      }
+    } else if (nivel == 2) {
+      for (var i = 0; i < 2; i++) {
+        $memoryCard.push($memoryCardC);
+        $memoryCard.push($memorycardSettings);
+        $memoryCard.push($memoryCardJS);
+        $memoryCard.push($memorycardBug);
+        $memoryCard.push($memorycardCabeca);
+        $memoryCard.push($memorycardCelular);
+        $memoryCard.push($memorycardPhp);
+        $memoryCard.push($memorycardResponsivo);
+      }
+    } else {
+      for (var i = 0; i < 2; i++) {
+        $memoryCard.push($memoryCardC);
+        $memoryCard.push($memorycardSettings);
+        $memoryCard.push($memoryCardJS);
+        $memoryCard.push($memorycardBug);
+        $memoryCard.push($memorycardCabeca);
+        $memoryCard.push($memorycardCelular);
+        $memoryCard.push($memorycardPhp);
+        $memoryCard.push($memorycardResponsivo);
+        $memoryCard.push($memorycardWoman);
+        $memoryCard.push($memoryCardJava);
+      }
     }
 
-    // console.log($memoryCard);
     shuffleCards.shuffle($memoryCard);
 
     return `
