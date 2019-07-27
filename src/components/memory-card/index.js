@@ -1,13 +1,15 @@
 const memoryCard = (function() {
   const module = {};
 
+  module._id = 0;
+
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     // width: 125px;
     // height: 115px;
     $style.textContent = `
-      .memory-card{
+      .memory-card.memory-card-${module._id} {
         width: 80px;
         height: 85px;
         position: relative;
@@ -16,7 +18,7 @@ const memoryCard = (function() {
     
         
       }
-      .memory-card .card {
+      .memory-card .card-${module._id} {
         width: 80px;
         height: 85px;
         background-color: #f25a70;
@@ -30,19 +32,20 @@ const memoryCard = (function() {
         position: absolute;
       }
       
-      .memory-card .card.-turned {
+      .memory-card .card-${module._id}.-turned {
         background-color: #fff;
       }
     
-      .memory-card.-active .card {
+      .memory-card.-active .card-${module._id} {
         display: none;
       }
       
-      .memory-card.-active .card.-turned {
+      .memory-card.-active .card-${module._id}.-turned {
         display: flex;
+        cursor: default;
       }
     
-      .card.-turned::before {
+      .card-${module._id}.-turned::before {
         content: "";
         width: 60px;
         height: 60px;
@@ -51,19 +54,19 @@ const memoryCard = (function() {
         border-radius: 50%;
       }
       
-      .card > .icon {
+      .card-${module._id} > .icon {
         width: 57px;
         position: absolute;
       }
-      .card.-turned > .icon {
+      .card-${module._id}.-turned > .icon {
         position: absolute;
         transform: translateY(-14px);
       }
     
-      .memory-card.-right {
+      .memory-card-${module._id}.-right {
         box-shadow: 0 3px 6px #2ed573;
         animation: right 300ms 1;
-    
+       
       }
     
       @keyframes right {
@@ -74,7 +77,7 @@ const memoryCard = (function() {
         100%  {transform: translateY(0)}
       }
     
-      .memory-card.-wrong {
+      .memory-card-${module._id}.-wrong {
         box-shadow: 0 3px 6px rgb(242, 90, 112);
         animation: wrong 300ms 1;
       }
@@ -138,19 +141,22 @@ const memoryCard = (function() {
   };
 
   module.render = ({ src, alt }) => {
+    module._id++;
     module._style();
 
     return `
 
-    <div class="memory-card" onClick="memoryCard.handleClick(this)">
-    <article class="card -turned">
+    <div class="memory-card memory-card-${
+      module._id
+    }" onClick="memoryCard.handleClick(this)">
+    <article class="card -turned card-${module._id}">
       <img 
           src='${src}' 
           alt= '${alt}'
           class='icon' >
       </img> 
     </article>
-    <article class="card">
+    <article class="card card-${module._id}">
     <img 
         src='img/icons/icon-collabcode.png' 
         alt= 'Mascote da CollabCode'
