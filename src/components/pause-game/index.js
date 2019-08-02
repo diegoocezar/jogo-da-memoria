@@ -16,12 +16,15 @@ const pauseGame = function() {
   });
 
   const $exitButton = gameButton.render({
-    buttonClass: "-exit",
+    buttonClass: "-exit-paused",
     content: "Sair",
     path: "exit"
   });
 
   $root.insertAdjacentHTML("beforebegin", $gameLayer);
   $root.insertAdjacentHTML("beforebegin", $backButton);
+  $root.insertAdjacentHTML("beforebegin", $restartButton);
+  $root.insertAdjacentHTML("beforeend", $exitButton);
+
   // $root.insertAdjacentHTML("beforebegin", $startButton);
 };

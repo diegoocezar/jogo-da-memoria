@@ -28,7 +28,7 @@ const gameButton = (function() {
         animation: move 800ms infinite;
       }
 
-      .game-button-${module._id}.-start {
+      .game-button-${module._id}.-start{
         bottom: 55%;
         left: 50%;
         transform: translateX(-50%);
@@ -39,7 +39,16 @@ const gameButton = (function() {
         background-color: #2E8B57;
       }
 
-      
+      .game-button-${module._id}.-back {
+        bottom: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #27ae60;
+      }
+
+      .game-button-${module._id}.-back {
+        background-color: #2E8B57;
+      }
       
       .game-button-${module._id}.-exit {
         bottom: 35%;
@@ -53,14 +62,27 @@ const gameButton = (function() {
         
       }
 
-      .game-button-${module._id}.-back {
-        bottom: 75%;
+      .game-button-${module._id}.-exit-paused {
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f25a70;
+      }
+
+      .game-button-${module._id}.-exit-paused:hover {
+        background-color: #992c3c;
+        
+      }
+
+      .game-button-${module._id}.-restart {
+        bottom: 40%;
         left: 50%;
         transform: translateX(-50%);
         background-color: #e67e22;
+        font-size: .8rem;
       }
 
-      .game-button-${module._id}.-return:hover {
+      .game-button-${module._id}.-restart:hover {
         background-color: #ff7f50;
         
       }
@@ -76,7 +98,7 @@ const gameButton = (function() {
       }
 
       .game-button-${module._id}.-pause:hover {
-        background-color: #8f592a;
+        background-color: #ff7f50;
         animation: none;
       }
   
@@ -98,9 +120,10 @@ const gameButton = (function() {
 
   module.handleClick = ($component, path, event) => {
     const $gameLayer = document.querySelector(".game-layer");
-
     const $pauseButton = document.querySelector(".-pause");
     const $backButton = document.querySelector(".-back");
+    const $restartButton = document.querySelector(".-restart");
+    const $exitButton = document.querySelector(".-exit-paused");
 
     switch (path) {
       case "start":
@@ -128,68 +151,43 @@ const gameButton = (function() {
         break;
       case "back":
         event.preventDefault();
-        // const $pauseButton = document.querySelector(".-pause");
         $component.classList.remove("-button");
 
         $component.classList.add("-blur");
-        $backButton.classList.add("-blur");
+        $restartButton.classList.add("-blur");
+        $exitButton.classList.add("-blur");
         $gameLayer.classList.add("-blur");
         $pauseButton.classList.remove("-paused");
 
         scoreBar.timer(store.tempoPausado);
         setTimeout(() => {
           $component.remove();
-          $backButton.remove();
+          $restartButton.remove();
+          $exitButton.remove();
           $gameLayer.remove();
         }, 800);
+        break;
+      case "restart":
+        event.preventDefault();
+        $component.classList.remove("-button");
+        $component.classList.add("-blur");
+
+        $backButton.classList.add("-blur");
+        $exitButton.classList.add("-blur");
+        $gameLayer.classList.add("-blur");
+        $pauseButton.classList.remove("-paused");
+        scoreBar.timer(59);
+
+        setTimeout(() => {
+          window.location.hash = `#/game`;
+          window.location.reload();
+        }, 200);
         break;
       default:
         window.location.hash = `#/${path}`;
         window.location.reload();
         break;
     }
-    // if (path == "start") {
-    //   event.preventDefault();
-    //   const $gameLayer = document.querySelector(".game-layer");
-    //   $component.classList.remove("-button");
-    //   const $button = document.querySelector(".-button");
-
-    //   $component.classList.add("-blur");
-    //   $button.classList.add("-blur");
-    //   $gameLayer.classList.add("-blur");
-    //   setTimeout(() => {
-    //     $component.remove();
-    //     $button.remove();
-    //     $gameLayer.remove();
-    //     scoreBar.timer();
-    //   }, 800);
-    // } else if (path == "exit") {
-    //   window.location.hash = `#/nivel`;
-    //   window.location.reload();
-    // } else {
-    //   window.location.hash = `#/${path}`;
-    //   window.location.reload();
-    // }
-
-    // if (path != "undefined") {
-    //   window.location.hash = `#/${path}`;
-    //   window.location.reload();
-    // } else {
-    //   event.preventDefault();
-    //   const $gameLayer = document.querySelector(".game-layer");
-    //   $component.classList.remove("-button");
-    //   const $button = document.querySelector(".-button");
-
-    //   $component.classList.add("-blur");
-    //   $button.classList.add("-blur");
-    //   $gameLayer.classList.add("-blur");
-    //   setTimeout(() => {
-    //     $component.remove();
-    //     $button.remove();
-    //     $gameLayer.remove();
-    //     scoreBar.timer();
-    //   }, 800);
-    // }
   };
 
   module.render = ({ buttonClass, content, path }) => {
