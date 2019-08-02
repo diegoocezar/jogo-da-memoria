@@ -57,6 +57,7 @@ const scoreBar = (function() {
   };
 
   module.timer = seconds => {
+    const nivel = localStorage.getItem("dificuldade");
     const $timer = document.querySelector(".timer-collabcode");
     const $pauseButton = document.querySelector(".-pause");
     const minutos = 0;
@@ -65,7 +66,6 @@ const scoreBar = (function() {
       if ($pauseButton.classList.contains("-paused")) {
         clearInterval(counter);
         store.tempoPausado = segundos;
-        console.log("pausei em:", store.tempoPausado);
       } else {
         if (minutos == 0 && segundos >= 0) {
           $timer.textContent = `Tempo: 0${minutos}:${segundos}`;
@@ -73,6 +73,24 @@ const scoreBar = (function() {
             $timer.textContent = `Tempo: 0${minutos}:0${segundos}`;
           }
 
+          if (nivel == 1 && store.score == 40) {
+            clearInterval(counter);
+            store.tempoPausado = segundos;
+
+            endGame();
+          }
+          if (nivel == 2 && store.score == 80) {
+            clearInterval(counter);
+            store.tempoPausado = segundos;
+
+            endGame();
+          }
+          if (nivel == 3 && store.score == 100) {
+            clearInterval(counter);
+            store.tempoPausado = segundos;
+
+            endGame();
+          }
           segundos = segundos - 1;
         }
       }
